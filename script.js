@@ -1,7 +1,5 @@
 const claveCorrecta = "01-08";
-const contenedor = document.getElementById("contenedor");
-
-let clave = prompt("💖 Ingresa nuestra fecha especial (dd-mm)");
+let clave = prompt("Ingresa nuestra fecha 💝 (dd-mm)");
 
 if (clave !== claveCorrecta) {
   document.body.innerHTML = `
@@ -10,13 +8,31 @@ if (clave !== claveCorrecta) {
     </div>
   `;
 } else {
-  // Ocultamos el contenido al inicio
+  // ❤️ Lluvia de corazones
+  for (let i = 0; i < 40; i++) {
+    crearCorazon();
+  }
+}
+
+function crearCorazon() {
+  const corazon = document.createElement("div");
+  corazon.innerHTML = "💖";
+  corazon.classList.add("corazon");
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.animationDuration = 3 + Math.random() * 3 + "s";
+  document.body.appendChild(corazon);
+
+  setTimeout(() => {
+    corazon.remove();
+  }, 6000);
+}
+
+window.addEventListener("load", () => {
+  const contenedor = document.getElementById("contenedor");
   contenedor.style.opacity = 0;
 
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      contenedor.style.transition = "opacity 1.5s";
-      contenedor.style.opacity = 1;
-    }, 200);
-  });
-}
+  setTimeout(() => {
+    contenedor.style.transition = "opacity 1.5s";
+    contenedor.style.opacity = 1;
+  }, 200);
+});
