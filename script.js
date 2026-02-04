@@ -8,31 +8,36 @@ if (clave !== claveCorrecta) {
     </div>
   `;
 } else {
-  // ❤️ Lluvia de corazones
-  for (let i = 0; i < 40; i++) {
+  // Esperamos un poquito para que el navegador renderice
+  setTimeout(() => {
+    iniciarLluviaDeCorazones();
+  }, 300);
+}
+
+// 💖 FUNCIÓN LLUVIA
+function iniciarLluviaDeCorazones() {
+  const intervalo = setInterval(() => {
     crearCorazon();
-  }
+  }, 200);
+
+  // Detener la lluvia después de 6 segundos
+  setTimeout(() => {
+    clearInterval(intervalo);
+  }, 6000);
 }
 
 function crearCorazon() {
   const corazon = document.createElement("div");
-  corazon.innerHTML = "💖";
-  corazon.classList.add("corazon");
+  corazon.className = "corazon";
+  corazon.textContent = "💖";
+
   corazon.style.left = Math.random() * 100 + "vw";
-  corazon.style.animationDuration = 3 + Math.random() * 3 + "s";
+  corazon.style.fontSize = 20 + Math.random() * 20 + "px";
+  corazon.style.animationDuration = 4 + Math.random() * 2 + "s";
+
   document.body.appendChild(corazon);
 
   setTimeout(() => {
     corazon.remove();
   }, 6000);
 }
-
-window.addEventListener("load", () => {
-  const contenedor = document.getElementById("contenedor");
-  contenedor.style.opacity = 0;
-
-  setTimeout(() => {
-    contenedor.style.transition = "opacity 1.5s";
-    contenedor.style.opacity = 1;
-  }, 200);
-});

@@ -102,19 +102,20 @@ img:active {
     transform: translateY(0);
   }
 }
-
 /* 💖 LLUVIA DE CORAZONES */
 .corazon {
   position: fixed;
-  top: -10px;
-  font-size: 24px;
-  animation: caer linear forwards;
+  top: -40px;
+  pointer-events: none;
   z-index: 9999;
+  animation-name: caer;
+  animation-timing-function: linear;
 }
 
 @keyframes caer {
   to {
-    transform: translateY(100vh);
+    transform: translateY(110vh);
     opacity: 0;
   }
 }
+
