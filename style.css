@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #ffdee9, #b5fffc);
+  color: #333;
+}
+
+#contenedor {
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+/* TITULOS */
+h1 {
+  font-size: 1.8rem;
+  color: #e63946;
+  margin-bottom: 8px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+/* BLOQUES DE HISTORIA */
+.bloque {
+  margin-bottom: 32px;
+}
+
+.bloque p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* IMAGENES */
+img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  margin-bottom: 8px;
+}
+
+/* CARTA FINAL */
+.carta {
+  background: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 22px;
+  margin-top: 32px;
+}
+
+.carta h2 {
+  color: #e63946;
+  font-size: 1.4rem;
+}
+
+.carta p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* 📱 EFECTO TÁCTIL */
+img:active {
+  transform: scale(0.98);
+}
+
+/* 💻 AJUSTES PARA PANTALLAS GRANDES */
+@media (min-width: 768px) {
+  #contenedor {
+    max-width: 700px;
+    margin: auto;
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .bloque p,
+  .carta p {
+    font-size: 1.1rem;
+  }
+}
+
+
+.bloque {
+  animation: aparecer 0.6s ease both;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
