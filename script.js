@@ -1,5 +1,5 @@
 const claveCorrecta = "01-08-22";
-let clave = prompt("Ingresa nuestra fecha 💝 (dd-mm)");
+let clave = prompt("Ingresa nuestra fecha 💝 (dd-mm-yy)");
 
 if (clave !== claveCorrecta) {
   document.body.innerHTML = `
