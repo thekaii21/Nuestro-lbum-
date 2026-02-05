@@ -119,3 +119,32 @@ img:active {
   }
 }
 
+/* ✨ ANIMACIÓN AL SCROLL */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: all 0.8s ease;
+}
+
+.reveal.activo {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 📱 EFECTO TACTIL AVANZADO */
+img:active,
+.bloque:active {
+  transform: scale(0.96);
+  transition: transform 0.1s;
+}
+
+@keyframes explosion {
+  to {
+    transform: translateY(-40px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.corazon.explota {
+  animation: explosion 0.6s ease-out forwards;
+}
