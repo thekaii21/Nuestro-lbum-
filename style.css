@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  background: linear-gradient(180deg, #ffdee9, #b5fffc);
+  background: linear-gradient(180deg, #f46896, #f46896);
   color: #333;
 }
 
@@ -18,7 +18,7 @@ body {
 /* TITULOS */
 h1 {
   font-size: 1.8rem;
-  color: #e63946;
+  color: #f9c6ca;
   margin-bottom: 8px;
 }
 
